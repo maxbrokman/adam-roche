@@ -31,7 +31,6 @@ function _tk_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', '_tk' ); ?></h1>
 		<ul class="pager">
 
 		<?php if ( is_single() ) : // navigation links for single posts ?>
@@ -42,11 +41,11 @@ function _tk_content_nav( $nav_id ) {
 		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<li class="nav-previous previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_tk' ) ); ?></li>
+			<li class="nav-previous previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Back', '_tk' ) ); ?></li>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_tk' ) ); ?></li>
+			<li class="nav-next next"><?php previous_posts_link( __( 'Forward <span class="meta-nav">&rarr;</span>', '_tk' ) ); ?></li>
 			<?php endif; ?>
 
 		<?php endif; ?>

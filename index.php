@@ -15,6 +15,8 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
+        <div class="clearfix">
+
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -23,10 +25,12 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'content', get_post_format() );
-			?>
+                get_template_part( 'block', get_post_format() );
+            ?>
 
 		<?php endwhile; ?>
+
+        </div>
 
 		<?php _tk_content_nav( 'nav-below' ); ?>
 
@@ -36,5 +40,4 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

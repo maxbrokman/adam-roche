@@ -147,3 +147,22 @@ require get_template_directory() . '/includes/jetpack.php';
  * Load custom WordPress nav walker.
  */
 require get_template_directory() . '/includes/bootstrap-wp-navwalker.php';
+
+/**
+ * Bye bye admin bar
+ */
+add_filter('show_admin_bar', function(){return false;});
+
+/**
+ * Enqueue dat mofo
+ */
+add_action('wp_enqueue_scripts', 'ar_enqueue');
+function ar_enqueue()
+{
+    wp_enqueue_style('pathwayGothic', "//fonts.googleapis.com/css?family=Pathway+Gothic+One");
+}
+
+/**
+ * Image size
+ */
+add_image_size('roche-block', 250, 350, true);
